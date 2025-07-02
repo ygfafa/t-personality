@@ -1,16 +1,40 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+/* eslint-disable import/no-anonymous-default-export */
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import { FlatCompat } from '@eslint/eslintrc'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import pluginPrettier from 'eslint-plugin-prettier'
+import pluginImport from 'eslint-plugin-import'
+import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-});
+})
 
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
+export default [
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  {
+    files: ['**/*.{js,ts,jsx,tsx}'],
+    plugins: {
+      prettier: pluginPrettier,
+      import: pluginImport,
+      'simple-import-sort': pluginSimpleImportSort,
+    },
+    rules: {
+      // Prettier
+      'prettier/prettier': 'warn',
 
-export default eslintConfig;
+      // import 정렬
+      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/exports': 'warn',
+
+      // import 관련 권장 룰
+      'import/first': 'warn',
+      'import/newline-after-import': 'warn',
+      'import/no-duplicates': 'warn',
+    },
+  },
+]

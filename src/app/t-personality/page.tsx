@@ -3,7 +3,7 @@ const TPersonalityPage = () => {
     <div>
       <h1>T Personality</h1>
     </div>
-  );
-};
+  )
+}
 
-export default TPersonalityPage;
+export default TPersonalityPage
