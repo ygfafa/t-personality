@@ -1,16 +1,34 @@
 @import "tailwindcss";
-html,
-body {
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -ms-overflow-style: none;
-  scrollbar-width: none; /* Firefox */
+
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+  }
+  body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    color: '#1B2228';
+  }
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
 }
 
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+
+@theme {
 }
 
-body {
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+@layer utilities {
+  .nb-shadow {
+    border: 1px solid #000;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.9);
+  }
 }

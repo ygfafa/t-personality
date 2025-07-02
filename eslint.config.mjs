@@ -35,6 +35,7 @@ export default [
       'import/first': 'warn',
       'import/newline-after-import': 'warn',
       'import/no-duplicates': 'warn',
+      '@next/next/no-img-element': 'off',
     },
   },
 ]
