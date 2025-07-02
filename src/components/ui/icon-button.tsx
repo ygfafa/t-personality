@@ -1,11 +1,13 @@
-'use client'
-
 import { motion } from 'framer-motion'
 
 import { cn } from '@/lib/utils'
 
-export type ButtonProps = React.ComponentProps<typeof motion.button>
-export const Button = ({ children, className, ...props }: ButtonProps) => {
+type IconButtonProps = React.ComponentProps<typeof motion.button>
+export const IconButton = ({
+  children,
+  className,
+  ...props
+}: IconButtonProps) => {
   return (
     <motion.button
       whileTap={{
@@ -15,7 +17,7 @@ export const Button = ({ children, className, ...props }: ButtonProps) => {
         transition: { type: 'spring', stiffness: 400, damping: 20 },
       }}
       className={cn(
-        'w-full rounded border-1 border-black bg-[#FDC800] py-3 text-lg font-bold shadow-[2px_2px_0px_rgba(0,0,0,0.9)]',
+        'flex h-6 w-6 items-center justify-center rounded border-1 border-black shadow-[2px_2px_0px_rgba(0,0,0,0.9)]',
         className
       )}
       {...props}

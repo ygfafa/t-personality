@@ -58,7 +58,7 @@ const TPersonalitySurveyPage = () => {
   // 결과 페이지 이동
   const handleSubmit = () => {
     if (!isComplete) return
-    router.push('/loading')
+    router.push('/t-personality/result')
   }
 
   const handleContinue = () => {

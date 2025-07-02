@@ -23,6 +23,9 @@
 
 
 @theme {
+  --color-primary: #FDC800;
+  --color-secondary: #007BFF;
+  --color-background: #EEEDDE;
 }
 
 
@@ -31,4 +34,12 @@
     border: 1px solid #000;
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.9);
   }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
+

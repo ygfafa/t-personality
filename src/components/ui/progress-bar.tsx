@@ -10,7 +10,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ value }) => {
     <div className="relative h-5 w-full overflow-hidden rounded-full border-1 border-black bg-white shadow-[2px_2px_0px_rgba(0,0,0,0.7)]">
       {/* 진행 바 */}
       <div
-        className="absolute top-0 left-0 h-full rounded-full bg-[#007BFF] transition-all duration-300"
+        className="bg-secondary absolute top-0 left-0 h-full rounded-full transition-all duration-300"
         style={{ width: `${percent}%` }}
       />
       {/* 퍼센트 텍스트 */}
