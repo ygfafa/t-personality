@@ -60,7 +60,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <main
-          className="mx-auto h-full bg-[#EEEDDE] border-l-1 border-r-1 border-gray-800 "
+          className="mx-auto h-full min-h-screen border-r-1 border-l-1 border-gray-800 bg-[#EEEDDE]"
           style={{
             maxWidth: MAX_MOBILE_SCREEN_WIDTH,
           }}
