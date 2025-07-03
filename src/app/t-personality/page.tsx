@@ -1,5 +1,5 @@
 import { Screen } from '@/components/layouts/screen'
-import { Tag } from '@/components/tag'
+import { Tag } from '@/components/ui/tag'
 
 import { AboutButton } from './_components/about-button'
 import { Benefits } from './_components/benefits'
