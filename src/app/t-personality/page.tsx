@@ -22,7 +22,7 @@ const TPersonalityPage = () => {
         />
       </div>
 
-      <div className="mb-2 flex justify-center">
+      <div className="mb-3 flex justify-center">
         <Tag>T Personality</Tag>
       </div>
 
@@ -35,7 +35,7 @@ const TPersonalityPage = () => {
         </p>
       </div>
 
-      <div className="mt-6 px-4">
+      <div className="mt-8 px-4">
         <Benefits />
       </div>
 

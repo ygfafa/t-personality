@@ -50,7 +50,9 @@ export const Screen = ({
         </div>
       )}
 
-      <div style={{ paddingBottom }}>{children}</div>
+      <div style={{ paddingBottom }} className="min-h-full pt-3">
+        {children}
+      </div>
     </div>
   )
 }
