@@ -1,4 +1,6 @@
+
 @import "tailwindcss";
+@import "tw-animate-css";
 
 
 @layer base {
@@ -8,7 +10,7 @@
   html,
   body {
     user-select: none;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent; 
     -ms-overflow-style: none;
     scrollbar-width: none; /* Firefox */
   }
