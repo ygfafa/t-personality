@@ -40,7 +40,7 @@ export const Segmented: React.FC<SegmentedProps> = ({
   return (
     <div
       className={cn(
-        'no-scrollbar inline-flex w-full gap-1 overflow-x-auto p-1 whitespace-nowrap',
+        'no-scrollbar inline-flex w-full gap-1 overflow-x-auto py-1.5 whitespace-nowrap',
         className
       )}
       style={{ WebkitOverflowScrolling: 'touch' }}

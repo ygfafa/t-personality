@@ -1,10 +1,16 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import { Button } from '@/components/ui/button'
+import { Screen } from '@/components/layouts/screen'
+import { ShareFeature } from '@/components/share-feature'
+import { Divider } from '@/components/ui/divider'
 
 import { getSurveyResultCode } from '../../../lib/utils'
 import { useTPersonalitySurveyStore } from '../_hooks/use-t-personality-survey-store'
+import { GoToShare } from './_components/\bgo-to-share'
+import { PartnershipChart } from './_components/partnership-chart'
+import { RacketRecommendation } from './_components/racket-recommendation'
+import { ResultCard } from './_components/result-card'
 
 // 타입 정의
 interface Profile {
@@ -43,9 +49,6 @@ const ResultPage = () => {
     })
   }, [answers])
 
-  // 설문 미완료 시 설문 페이지로 리다이렉트(선택)
-  // if (!answers || answers.every(a => a === 0)) return <Navigate to="/survey" />
-
   if (!profile)
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#F3F0DD] text-xl text-[#027BFC]">
@@ -54,32 +57,39 @@ const ResultPage = () => {
     )
 
   return (
-    <div className="min-h-screen">
-      <div className="mb-2 text-[22px] font-extrabold tracking-tight">
-        나의 테니스 성향 결과
-      </div>
-      <div className="mb-1 text-[32px] font-extrabold tracking-wider text-[#FDC800]">
-        {profile.name}
-      </div>
-      <div className="mb-2 text-lg font-bold">{profile.nickname}</div>
-      <div className="mb-3 text-center text-base leading-relaxed">
-        {profile.description}
-      </div>
-      <div className="rounded border-2 border-black bg-[#FDC800] px-5 py-3 text-base font-bold text-[#111] shadow-[4px_4px_0px_rgba(0,0,0,0.9)]">
-        {profile.improvement_tip}
-      </div>
-      <div className="mt-4 text-sm">
-        유형 코드: <b className="text-base text-[#FDC800]">{code}</b>
-      </div>
-      <Button
-        onClick={() => {
-          reset()
-          window.location.href = '/survey'
+    <Screen
+      withSidePadding
+      header={{
+        backgroundColor: '#EEEDDE',
+        title: '나의 테니스 성향 결과',
+        extras: [<GoToShare key="share" />],
+      }}
+    >
+      <ResultCard
+        code={profile.code}
+        nickname={profile.nickname}
+        description={profile.description}
+        improvementTip={profile.improvement_tip}
+      />
+
+      <Divider />
+      <RacketRecommendation />
+      <PartnershipChart />
+      <ShareFeature
+        className="mt-8"
+        kakao={{
+          url: 'https://www.google.com',
+          title: 'Google',
+          description: 'Google is a search engine',
+          imageUrl:
+            'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png',
+          buttonTitle: 'Google',
         }}
-      >
-        다시 설문하기
-      </Button>
-    </div>
+        copy={{
+          url: 'https://www.google.com',
+        }}
+      />
+    </Screen>
   )
 }
 
