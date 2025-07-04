@@ -29,9 +29,9 @@ interface Question {
 }
 
 const ResultPage = () => {
-  const { answers, reset } = useTPersonalitySurveyStore()
+  const { answers } = useTPersonalitySurveyStore()
   const [profile, setProfile] = useState<Profile | null>(null)
-  const [code, setCode] = useState('')
+  const [, setCode] = useState('')
 
   useEffect(() => {
     Promise.all([
